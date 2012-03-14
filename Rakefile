@@ -14,6 +14,8 @@ task :upload_nginx do
       end
     end
 
+    sh "scp nginx.conf #{f}:/etc/nginx/nginx.conf"
+
     ssh f, "sudo /etc/init.d/nginx restart"
   end
 end
