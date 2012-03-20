@@ -5,6 +5,7 @@ def ssh(server, cmd)
   sh "ssh #{server} '#{cmd}'"
 end
 
+desc "Upload the nginx configs to the frontends"
 task :upload_nginx do
   frontends.each do |f|
     Dir.open "nginx" do |d|
